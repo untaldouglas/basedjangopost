@@ -28,6 +28,7 @@
                 <td>{{empleado.genero}}</td>
                 <td>{{empleado.fecha_nacimiento}}</td>
                 <td>{{empleado.email}}</td>
+                <td>{{empleado.domicilio}}</td>
                 <td><a href="{% url 'empleado_actualizar' empleado.id %}" class="btn text-secondary px-0"><i class="far fa-edit fa-lg"></i></a>
                     <form action="{% url 'empleado_borrar' empleado.id %}" method="post" class="d-inline">
                         {% csrf_token %}

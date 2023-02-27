@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
                 ('genero', models.CharField(choices=[('MASCULINO', 'Masculino'), ('FEMENINO', 'Femenino')], max_length=10)),
                 ('fecha_nacimiento', models.DateField()),
                 ('email', models.EmailField(max_length=254)),
+                ('domicilio', models.CharField(max_length=254)),
             ],
         ),
     ]

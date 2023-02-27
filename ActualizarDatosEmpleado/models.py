@@ -13,4 +13,5 @@ class Empleado(models.Model):
     genero = models.CharField(max_length=10, choices=GENERO)
     fecha_nacimiento = models.DateField()
     email = models.EmailField()
+    domicilio = models.CharField(max_length=254)
 
