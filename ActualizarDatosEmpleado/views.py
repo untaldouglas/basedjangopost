@@ -1,10 +1,17 @@
 from django.shortcuts import render, redirect
 from .forms import EmpleadoForm
 from .models import Empleado
+from django.db.models import Q 
 # Create your views here.
 
 def empleado_lista(request):
+    queryset = request.GET.get("buscar")
     context = {'empleado_lista' : Empleado.objects.all()}
+    if queryset:
+        context = {'empleado_lista' : Empleado.objects.filter(
+            Q(apellidos__icontains = queryset)   
+        ).distinct()
+        }
     return render(request, "registro_empleado/empleado_lista.html", context)
 
 def empleado_form(request, id = 0):
